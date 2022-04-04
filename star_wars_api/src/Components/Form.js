@@ -1,8 +1,29 @@
+import React, { useState } from "react";
+import { navigate } from "@reach/router";
+
+
 const Form = () => {
-  return
-  <from>
-    Form
-  </from>
+  const [category, setCategory] = useState("");
+  const [id, setId] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/people/${id}`);
+  };
+
+  return (
+  <form onSubmit={handleSubmit}> 
+    Search for: {" "}
+    <select onChange={(e) => setCategory(e.target.value)}>
+      <option value="none"> -------- </option>
+      <option value="people">People</option>
+      <option value="planets">Planets</option>
+    </select>
+    ID: <input type="text" onChange={e => setId(e.target.value)}/>
+    <button type="submit"> Search </button>
+  </form>
+  );
 };
+
 
 export default Form;

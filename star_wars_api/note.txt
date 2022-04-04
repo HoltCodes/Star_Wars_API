@@ -1,0 +1,5 @@
+npx create-react-app star_wars_api
+cd star_wars_api
+
+npm i @reach/router --force
+npm i axios
