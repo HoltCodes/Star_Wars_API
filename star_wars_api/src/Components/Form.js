@@ -8,18 +8,18 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/people/${id}`);
+    navigate(`/${category}/${id}`);
   };
 
   return (
   <form onSubmit={handleSubmit}> 
-    Search for: {" "}
+    Search For: {" "}
     <select onChange={(e) => setCategory(e.target.value)}>
       <option value="none"> -------- </option>
       <option value="people">People</option>
       <option value="planets">Planets</option>
     </select>
-    ID: <input type="text" onChange={e => setId(e.target.value)}/>
+    ID: <input type="text" onChange={(e) => setId(e.target.value)}/>
     <button type="submit"> Search </button>
   </form>
   );
